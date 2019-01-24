@@ -1,0 +1,6 @@
+CREATE SCHEMA db ;
+CREATE TABLE db.users (
+  username VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  uid VARCHAR(6) NOT NULL,
+  PRIMARY KEY (uid));

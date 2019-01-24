@@ -1,0 +1,131 @@
+<!-- ./htdocs/index.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" / />
+    <title>My First Server</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
+    <link rel="stylesheet" type="text/css" href="/src/main.css" />
+    <script src="/src/main.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="ui one column grid">
+        <div class="row" style="height:3em"></div>
+        <div class="centered column" id="chatDiv">
+            <h3 class="ui top attached header" id="msgHeader">
+                <div>Chat Room</div>
+                <button class="ui icon button" id="loginBtn">
+                    <i class="icon sign-out" style="margin: 10 0 -10 0 !important;"></i>
+                </button>
+            </h3>
+            <div class="ui attached segment" id="msgDiv">
+            </div>
+            <div class="ui bottom attached segment" id="inputDiv">
+                <div class="ui action fluid input">
+                    <input type="text" placeholder="Message..." id="msgInput">
+                    <button class="ui button" id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal" id="loginModal">
+        <div class="header">Login to continue</div>
+        <div class="ui bottom attached basic placeholder segment" style="border:none">
+            <div class="stackable grid">
+                <div class="ui two column very relaxed stackable grid">
+                    <div class="column">
+                        <div class="ui fluid form">
+                            <div class="field">
+                                <label>Username</label>
+                                <div class="ui left icon input">
+                                    <input type="text" placeholder="Username" id="login_username" maxlength="100">
+                                    <i class="user icon"></i>
+                                </div>
+                                <div class="ui hidden pointing red basic label username">
+                                    This username doesn't exist.
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Password</label>
+                                <div class="ui left icon input">
+                                    <input type="password" id="login_password">
+                                    <i class="lock icon"></i>
+                                </div>
+                                <div class="ui hidden pointing red basic label password">
+                                    Your password is incorrect.
+                                </div>
+                            </div>
+                            <div class="ui blue submit button" id="loginBtn"><i class="sign-in icon"></i>Login</div>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider">
+                    </div>
+                    <div class="middle aligned column">
+                        <div class="ui big button" id="toSignupBtn">
+                            <i class="signup icon"></i>
+                            Sign Up
+                        </div>
+                    </div>
+                </div>
+                <div class="ui horizontal divider" style="margin-top:-90px;margin-bottom:75px">
+                    Or
+                </div>
+                <div class="ui vertical divider">
+                    Or
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="ui modal" id="signupModal">
+        <div class="header">Sign up</div>
+        <div class="content">
+            <div class="ui fluid form">
+                <div class="field">
+                    <label>Username</label>
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Username" id="signup_username" maxlength="100">
+                        <i class="user icon"></i>
+                    </div>
+                    <div class="ui hidden pointing red basic label username">
+                        This username is taken.
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <div class="ui left icon input">
+                        <input type="password" id="signup_password">
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Confirm password</label>
+                    <div class="ui left icon input">
+                        <input type="password" id="confirm_password">
+                        <i class="lock icon"></i>
+                    </div>
+                    <div class="ui hidden pointing red basic label password">
+                        Your password is different from your confirmation.
+                    </div>
+                </div>
+                <div class="ui blue submit button" id="signupBtn">
+                    <i class="signup icon"></i>Sign up
+                </div>
+                <div class="ui button" id="toLoginBtn">
+                    <i class="reply icon"></i>Cancel
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

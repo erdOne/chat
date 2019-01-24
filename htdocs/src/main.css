@@ -1,0 +1,95 @@
+/* hiding the scrollbar */
+#msgDiv::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    visibility: hidden;
+}
+
+@-moz-document url-prefix() {
+    #msgDiv{overflow: hidden !important;}
+}
+
+/* fixing divider on mobile */
+@media only screen and (max-width: 767px){
+    .vertical.divider{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 767px){
+    .horizontal.divider{
+        display: none !important;
+    }
+}
+
+/* chat window styling */
+#chatDiv{
+    width: 85%;
+    max-width: 400px;
+}
+
+#msgDiv{
+    height:60vh;
+    overflow-y:scroll;
+}
+
+#msgInput{
+    border: none;
+}
+
+#sendBtn{
+    border-top-right-radius: 0;
+}
+
+#inputDiv{
+    padding: 0;
+    border-top: 1px solid #D4D4D5;
+}
+
+/* logout button positioning */
+#msgHeader{
+    position: relative;
+    padding: 0 !important;
+    display: flex;
+}
+
+#msgHeader>div{
+    padding: 0.78571429rem 1rem;
+}
+
+#msgHeader>button{
+    right: 0;
+    position: absolute;
+    height: 100%;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+/* message styling */
+.message:not(.ui){
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.message:not(.ui)::after{
+    content: "";
+    clear: both;
+    display: table;
+
+}
+.message:not(.ui)>.segment{
+    max-width: 75%;
+}
+
+.ui.system.message{
+    width:100%;
+    text-align:center;
+    margin-top: 0;
+}
+
+.author{
+    font-weight: 700;
+}
+
+.author::after{
+    content: ":";
+}
